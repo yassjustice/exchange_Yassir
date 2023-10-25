@@ -1,3 +1,22 @@
+const generateDynamicCustomerData = (count) => {
+    const customersData = [];
+  
+    for (let i = 1; i <= count; i++) {
+      const customerData = {
+        firstName: `Customer${i}`,
+        lastName: `Last${i}`,
+        email: `customer${i}@example.com`,
+        password: `password${i}`,
+        creationDate: Date.now(),
+        validatAccount: true,
+        active: true,
+      };
+  
+      customersData.push(customerData);
+    }
+  
+    return customersData;
+  };
 const seedUsers = async (count) => {
     try {
         await mongoose.connect(config.database.url, {
